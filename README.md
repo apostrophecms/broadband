@@ -20,7 +20,7 @@ return broadband(cursor, 8, function(doc, callback) {
 
 ## Why?
 
-We wanted to work with MongoDB queries the way we work with `[async.eachLimit](https://github.com/caolan/async#eachLimit)`, but without yanking everything into memory at once with `toArray`.
+We wanted to work with MongoDB queries the way we work with [async.eachLimit](https://github.com/caolan/async#eachLimit), but without yanking everything into memory at once with `toArray`.
 
 Specifically, we wanted to resize some images in parallel, rather than waiting to do them one at a time. We have a MongoDB collection with information about all of the images. But there are a lot of them, so we don't want to yank all of that information into memory up front.
 
