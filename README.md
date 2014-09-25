@@ -24,15 +24,7 @@ We wanted to work with MongoDB queries the way we work with [async.eachLimit](ht
 
 Specifically, we wanted to resize some images in parallel, rather than waiting to do them one at a time. We have a MongoDB collection with information about all of the images. But there are a lot of them, so we don't want to yank all of that information into memory up front.
 
-MongoDB offers three options:
-
-1. `Cursor.toArray` gives you everything all at once. You could feed that to `async.eachLimit`. This is fine until the array is large.
-
-2. `Cursor.each` invokes a callback for every result, WHAM WHAM WHAM, with no throttling. Much faster than your image processor can handle them. We could use `async.queue`, but we'd wind up queueing everything up in memory, just like `toArray`.
-
-3. `Cursor.nextObject` gives you one result at a time. That's fine, but now you can't work in parallel.
-
-`broadband` wraps `Cursor.nextObject` with a queueing mechanism that allows several results to be processed at once, but only up to the limit you specify. You don't run out of memory due to too many image processes, you don't wait too long, and you don't have to load the entire array into memory at once. Everybody gets a medal.
+`broadband` wraps MongoDB's `Cursor.nextObject` with a queueing mechanism that allows several results to be processed at once, but only up to the limit you specify. You don't run out of memory due to too many image processes, you don't wait too long, and you don't have to load the entire array into memory at once. Everybody gets a medal.
 
 ## What about errors?
 
