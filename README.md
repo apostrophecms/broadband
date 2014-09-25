@@ -1,7 +1,7 @@
 broadband
 =========
 
-<a href="http://apostrophenow.org/"><img src="https://raw.github.com/punkave/broadband/master/logos/logo-box-madefor.png" align="right" /></a>
+<a href="http://apostrophenow.org/"><img src="https://raw.githubusercontent.com/boutell/broadband/master/logos/logo-box-madefor.png" align="right" /></a>
 
 Given a MongoDB query cursor, process the results in parallel, up to the specified limit.
 
@@ -54,7 +54,7 @@ You can pass any object with a `nextObject` method as the "cursor." That method 
 
 Feel free to open issues on [github](http://github.com/punkave/broadband).
 
-<a href="http://punkave.com/"><img src="https://raw.github.com/punkave/broadband/master/logos/logo-box-builtby.png" /></a>
+<a href="http://punkave.com/"><img src="https://raw.githubusercontent.com/boutell/broadband/master/logos/logo-box-builtby.png" /></a>
 
 ## Changelog
 
