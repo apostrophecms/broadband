@@ -40,7 +40,7 @@ If an error occurs, `broadband` will:
 
 1. Stop starting new iterator callbacks.
 2. Wait for any outstanding iterator callbacks to finish.
-3. Invoke the final callback with the first error it received.
+3. Invoke the final callback (its third argument) with the first error it received.
 
 ## Using broadband without mongodb
 
