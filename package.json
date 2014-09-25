@@ -1,0 +1,31 @@
+{
+  "name": "broadband",
+  "version": "0.1.0",
+  "description": "Given a MongoDB query cursor, process the results in parallel, up to the specified limit.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/punkave/broadband"
+  },
+  "keywords": [
+    "async",
+    "parallel",
+    "concurrency",
+    "limit",
+    "series",
+    "mongodb",
+    "mongo"
+  ],
+  "author": "P'unk Avenue LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/punkave/broadband/issues"
+  },
+  "homepage": "https://github.com/punkave/broadband",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  }
+}
