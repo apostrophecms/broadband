@@ -1,6 +1,6 @@
 {
   "name": "broadband",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Given a MongoDB query cursor, process the results in parallel, up to the specified limit.",
   "main": "index.js",
   "scripts": {
