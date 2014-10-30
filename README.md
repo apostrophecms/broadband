@@ -50,6 +50,10 @@ Feel free to open issues on [github](http://github.com/punkave/broadband).
 
 ## Changelog
 
+### CHANGES IN 0.1.1
+
+Fixed a rare race condition which caused `broadband` to invoke its final callback more than once.
+
 ### CHANGES IN 0.1.0
 
 Initial release. With shiny unit tests, of course.

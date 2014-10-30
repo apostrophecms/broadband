@@ -9,8 +9,11 @@ module.exports = function(cursor, limit, each, callback) {
   var nextObjectActive = false;
 
   function fill() {
-
-    while (taskQueue.length < limit) {
+    // Because the end condition tests in our tasks are
+    // not guaranteed to wait for nextTick, we must check for
+    // the same end conditions here, otherwise broadband
+    // may terminate twice.
+    while ((taskQueue.length < limit) && (!(error || eof))) {
       var fn = makeTask(id++);
       taskQueue.push(fn);
       fn();

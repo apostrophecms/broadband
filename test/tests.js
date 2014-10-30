@@ -52,6 +52,7 @@ var collection = {
 };
 
 describe('broadband', function() {
+  var completions = 0;
   it('receives all results only once with random timing, never runs nextObject concurrently', function(done) {
     var seen = {};
     this.timeout(7000);
@@ -65,12 +66,15 @@ describe('broadband', function() {
         return callback(null);
       }, Math.random() * 50);
     }, function(err) {
+      completions++;
+      assert(completions === 1);
       assert(!err);
       assert(Object.keys(seen).length === data.length);
       return done();
     });
   });
   it('handles an error on the 80th result gracefully', function(done) {
+    var completions = 0;
     var limit = 4;
     var received = 0;
     var completed = 0;
@@ -92,6 +96,8 @@ describe('broadband', function() {
         return callback(null);
       }, Math.random() * 50);
     }, function(err) {
+      completions++;
+      assert(completions === 1);
       assert(err);
       assert(received === cursor.failOn);
       assert((completed >= cursor.failOn) && (completed < cursor.failOn + limit));
