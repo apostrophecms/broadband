@@ -1,7 +1,7 @@
 broadband
 =========
 
-<a href="http://apostrophenow.org/"><img src="https://raw.githubusercontent.com/boutell/broadband/master/logos/logo-box-madefor.png" align="right" /></a>
+<a href="https://apostrophecms.org/"><img src="https://raw.githubusercontent.com/boutell/broadband/master/logos/logo-box-madefor.png" align="right" /></a>
 
 Given a MongoDB query cursor, process the results in parallel, up to the specified limit.
 
@@ -49,6 +49,10 @@ Feel free to open issues on [github](http://github.com/punkave/broadband).
 <a href="http://punkave.com/"><img src="https://raw.githubusercontent.com/boutell/broadband/master/logos/logo-box-builtby.png" /></a>
 
 ## Changelog
+
+### CHANGES IN 1.0.0
+
+Declared 1.0.0 stable as this has long been a component of Apostrophe. Updated lodash dependency to satisfy `npm audit`.
 
 ### CHANGES IN 0.1.1
 
