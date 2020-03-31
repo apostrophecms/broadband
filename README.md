@@ -51,14 +51,19 @@ Feel free to open issues on [github](http://github.com/apostrophecms/broadband).
 
 ## Changelog
 
-### CHANGES IN 1.0.0
+### 1.1.0
 
-Declared 1.0.0 stable as this has long been a component of Apostrophe. Updated lodash dependency to satisfy `npm audit`.
+- Adds support for both MongoDB 2 and 3 via the cursor `next` and `nextObject` methods.
+- Adds JS linting to the tests.
 
-### CHANGES IN 0.1.1
+### 1.0.0
 
-Fixed a rare race condition which caused `broadband` to invoke its final callback more than once.
+- Declared 1.0.0 stable as this has long been a component of Apostrophe. Updated lodash dependency to satisfy `npm audit`.
 
-### CHANGES IN 0.1.0
+### 0.1.1
 
-Initial release. With shiny unit tests, of course.
+- Fixed a rare race condition which caused `broadband` to invoke its final callback more than once.
+
+### 0.1.0
+
+- Initial release. With shiny unit tests, of course.
