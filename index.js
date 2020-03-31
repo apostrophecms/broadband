@@ -79,7 +79,7 @@ module.exports = function(cursor, limit, each, callback) {
           nextObject();
         });
       }
-      return cursor.nextObject(function(err, doc) {
+      return cursor.next(function(err, doc) {
         fn(err, doc);
         nextObjectActive = false;
         nextObject();
