@@ -5,8 +5,7 @@ var broadband = require('../index.js');
 
 var data = [];
 var i;
-var errors = 0;
-var maxI = 0;
+
 for (i = 0; (i < 100); i++) {
   data[i] = { _id: i };
 }
@@ -33,11 +32,7 @@ function Cursor() {
       });
     }
     var result = data[self.i++];
-    // var err;
-    // if ((i > (data.length / 2)) && (Math.random() < 0.01)) {
-    //   err = 'error';
-    //   errors++;
-    // }
+
     return setTimeout(function() {
       self.nextObjectActive = false;
       return callback(null, result);

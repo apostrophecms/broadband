@@ -1,5 +1,6 @@
-broadband
+# broadband
 =========
+[![CircleCI](https://circleci.com/gh/apostrophecms/broadband/tree/master.svg?style=svg)](https://circleci.com/gh/apostrophecms/broadband/tree/master)
 
 <a href="https://apostrophecms.org/"><img src="https://raw.githubusercontent.com/boutell/broadband/master/logos/logo-box-madefor.png" align="right" /></a>
 
@@ -40,24 +41,29 @@ You can pass any object with a `nextObject` method as the "cursor." That method 
 
 ## About P'unk Avenue and Apostrophe
 
-`broadband` was created at [P'unk Avenue](http://punkave.com) for use in many projects built with Apostrophe, an open-source content management system built on node.js. If you like `broadband` you should definitely [check out apostrophenow.org](http://apostrophenow.org).
+`broadband` was created at [P'unk Avenue](https://punkave.com) for use in many projects built with Apostrophe, an open-source content management system built on node.js. If you like `broadband` you should definitely [check out apostrophecms.com](https://apostrophecms.com).
 
 ## Support
 
-Feel free to open issues on [github](http://github.com/punkave/broadband).
+Feel free to open issues on [github](http://github.com/apostrophecms/broadband).
 
-<a href="http://punkave.com/"><img src="https://raw.githubusercontent.com/boutell/broadband/master/logos/logo-box-builtby.png" /></a>
+<a href="https://punkave.com/"><img src="https://raw.githubusercontent.com/boutell/broadband/master/logos/logo-box-builtby.png" /></a>
 
 ## Changelog
 
-### CHANGES IN 1.0.0
+### 1.1.0
 
-Declared 1.0.0 stable as this has long been a component of Apostrophe. Updated lodash dependency to satisfy `npm audit`.
+- Adds support for both MongoDB 2 and 3 via the cursor `next` and `nextObject` methods.
+- Adds JS linting to the tests.
 
-### CHANGES IN 0.1.1
+### 1.0.0
 
-Fixed a rare race condition which caused `broadband` to invoke its final callback more than once.
+- Declared 1.0.0 stable as this has long been a component of Apostrophe. Updated lodash dependency to satisfy `npm audit`.
 
-### CHANGES IN 0.1.0
+### 0.1.1
 
-Initial release. With shiny unit tests, of course.
+- Fixed a rare race condition which caused `broadband` to invoke its final callback more than once.
+
+### 0.1.0
+
+- Initial release. With shiny unit tests, of course.
