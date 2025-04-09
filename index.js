@@ -1,12 +1,12 @@
-var _ = require('lodash');
+const _ = require('lodash');
 
 module.exports = function(cursor, limit, each, callback) {
-  var taskQueue = [];
-  var error;
-  var eof;
-  var id = 0;
-  var nextObjectQueue = [];
-  var nextObjectActive = false;
+  const taskQueue = [];
+  let error;
+  let eof;
+  let id = 0;
+  const nextObjectQueue = [];
+  let nextObjectActive = false;
 
   function fill() {
     // Because the end condition tests in our tasks are
@@ -14,13 +14,13 @@ module.exports = function(cursor, limit, each, callback) {
     // the same end conditions here, otherwise broadband
     // may terminate twice.
     while ((taskQueue.length < limit) && (!(error || eof))) {
-      var fn = makeTask(id++);
+      const fn = makeTask(id++);
       taskQueue.push(fn);
       fn();
     }
 
     function makeTask(id) {
-      var fn = function() {
+      const fn = function() {
         if (error || eof) {
           return setImmediate(_.partial(finished, id));
         }
@@ -71,7 +71,7 @@ module.exports = function(cursor, limit, each, callback) {
     }
     if (!nextObjectActive) {
       nextObjectActive = true;
-      var fn = nextObjectQueue.shift();
+      const fn = nextObjectQueue.shift();
       if (error || eof) {
         return setImmediate(function() {
           fn(error, null);
