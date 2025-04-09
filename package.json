@@ -4,7 +4,10 @@
   "description": "Given a MongoDB query cursor, process the results in parallel, up to the specified limit.",
   "main": "index.js",
   "scripts": {
-    "test": "npx eslint . && mocha test/tests.js"
+    "lint": "npm run eslint",
+    "eslint": "eslint .",
+    "test": "npm run lint && npm run mocha",
+    "mocha": "mocha"
   },
   "repository": {
     "type": "git",
