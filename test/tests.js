@@ -1,17 +1,17 @@
-var assert = require('assert');
-var broadband = require('../index.js');
+const assert = require('assert');
+const broadband = require('../index.js');
 
 // Mock mongodb
 
-var data = [];
-var i;
+const data = [];
+let i;
 
 for (i = 0; (i < 100); i++) {
   data[i] = { _id: i };
 }
 
 function Cursor() {
-  var self = this;
+  const self = this;
   self.i = 0;
   self.nextObjectActive = false;
   self.nextObject = function(callback) {
@@ -31,7 +31,7 @@ function Cursor() {
         return callback(null);
       });
     }
-    var result = data[self.i++];
+    const result = data[self.i++];
 
     return setTimeout(function() {
       self.nextObjectActive = false;
@@ -40,19 +40,19 @@ function Cursor() {
   };
 }
 
-var collection = {
+const collection = {
   find: function(criteria) {
     return new Cursor();
   }
 };
 
 describe('broadband', function() {
-  var completions = 0;
+  let completions = 0;
   it('receives all results only once with random timing, never runs nextObject concurrently', function(done) {
-    var seen = {};
+    const seen = {};
     this.timeout(7000);
 
-    var cursor = collection.find({});
+    const cursor = collection.find({});
     return broadband(cursor, 4, function(page, callback) {
       assert(page);
       assert(!seen[page._id]);
@@ -69,16 +69,16 @@ describe('broadband', function() {
     });
   });
   it('handles an error on the 80th result gracefully', function(done) {
-    var completions = 0;
-    var limit = 4;
-    var received = 0;
-    var completed = 0;
+    let completions = 0;
+    const limit = 4;
+    let received = 0;
+    let completed = 0;
     this.timeout(7000);
 
-    var cursor = collection.find({});
+    const cursor = collection.find({});
     cursor.failOn = 80;
-    var running = 0;
-    var maxRunning = 0;
+    let running = 0;
+    let maxRunning = 0;
     return broadband(cursor, limit, function(page, callback) {
       received++;
       running++;
